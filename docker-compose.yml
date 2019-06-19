@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  db:
+    image: "postgres"
+    volumes:
+      - ./data/ewc:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  ewc:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+
+
+
