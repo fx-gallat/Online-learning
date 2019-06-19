@@ -12,3 +12,4 @@ whitenoise
 gunicorn
 markdown
 django-filter
+django-cors-headers
